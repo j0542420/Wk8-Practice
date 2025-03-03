@@ -12,9 +12,10 @@ namespace Wk8_Practice
         public string Name { get; set; }
         public int Age { get; set; }
 
-        public Person() 
+        public Person(string name, int age)
         {
-
+            Name = name;
+            Age = age;
         }
     }
     internal class Program
@@ -39,41 +40,44 @@ namespace Wk8_Practice
 
             //writer.Close();
 
-            StreamReader reader = new StreamReader("C:\\temp\\newperson.csv");
+            //StreamReader reader = new StreamReader("C:\\temp\\newperson.csv");
 
-            string line = "";
-            while ((line = reader.ReadLine()) != null) //read line until end of file
-            {
-                if (line.Contains("Name"))
-                {
-                    continue;//skip first line
-                }
-                else
-                {
-                    //john1, 21
-                    string[] parts = line.Split(','); // chop line into 2 part, name and age
+            //string line = "";
+            //while ((line = reader.ReadLine()) != null) //read line until end of file
+            //{
+            //    if (line.Contains("Name"))
+            //    {
+            //        continue;//skip first line
+            //    }
+            //    else
+            //    {
+            //        //john1, 21
+            //        string[] parts = line.Split(','); // chop line into 2 part, name and age
 
-                    Person p = new Person(parts[0], Convert.ToInt32(parts[1])));
+            //        Person p = new Person(parts[0], Convert.ToInt32(parts[1])));
 
-                    persons.Add(p);
-                }
-            }
+            //        persons.Add(p);
+            //    }
+            //}
 
-            foreach(Person p in persons)
-            { 
-                Console.WriteLine(p.Name + " " + p.Age);
-            }
+            //foreach(Person p in persons)
+            //{ 
+            //    Console.WriteLine(p.Name + " " + p.Age);
+            //}
             //try to create a new csv file with letter grade pass or faild
-            StreamReader reader = new StreamReader("C:\\temp\\newperson.csv");
-            writer.WriteLine("Name, Age, Grade");
-            foreach (Person p in persons)
-            {
-                if(p.Age > 70)
-                {
-                    Console.WriteLine(p.Name + " " + p.Age);
-                }
-                else
-            }
+            //StreamReader reader = new StreamReader("C:\\temp\\newperson.csv");
+            //writer.WriteLine("Name, Age, Grade");
+            //foreach (Person p in persons)
+            //{
+            //    if(p.Age > 70)
+            //    {
+            //        Console.WriteLine(p.Name + "," + "Passed");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine(p.Name + "," + "failed");
+            //    }
+            //}
 
             Console.Read();
         }
